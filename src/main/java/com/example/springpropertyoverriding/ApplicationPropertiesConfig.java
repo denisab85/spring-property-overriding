@@ -1,7 +1,7 @@
 package com.example.springpropertyoverriding;
 
 import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
@@ -12,11 +12,12 @@ import org.springframework.context.annotation.PropertySource;
         "classpath:app.properties",
         "classpath:override.properties"
 })
-@ConfigurationProperties(prefix = "test")
 public class ApplicationPropertiesConfig {
 
-    private String application;
+    @Value("${test.application}")
+    protected String application;  // == "original"
 
-    private String app;
+    @Value("${test.app}")
+    protected String app;          // == "overridden"
 
 }
