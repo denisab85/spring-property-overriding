@@ -1,4 +1,4 @@
-# Spring Property Overriding with @PropertySource (demo)
+# Spring Property Overriding Demo
 
 This Spring Boot application is a sample project specifically designed to demonstrate 
 property overriding behavior in a Spring Boot configuration.
