@@ -9,16 +9,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PropertiesConfigTest {
 
     @Autowired
-    ApplicationPropertiesConfig applicationPropertiesConfig;
+    ApplicationPropertiesHolder applicationPropertiesHolder;
 
     @Test
     void definedInAppProperties() {
-        Assertions.assertEquals("overridden", applicationPropertiesConfig.getApp(), "test.app");
+        Assertions.assertEquals("overridden", applicationPropertiesHolder.getApp(), "test.app");
     }
 
     @Test
     void definedInApplicationProperties() {
-        Assertions.assertEquals("overridden", applicationPropertiesConfig.getApplication(), "test.application");
+        Assertions.assertEquals("overridden", applicationPropertiesHolder.getApplication(), "test.application");
     }
 
 }
